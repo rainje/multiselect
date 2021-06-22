@@ -274,6 +274,7 @@ Multiselect.prototype = {
 
 		document.getElementById(self._getInputFieldIdentifier()).addEventListener('propertychange', onInput);
 		document.getElementById(self._getInputFieldIdentifier()).addEventListener('input', onInput);
+		document.getElementById(self._getInputFieldIdentifier()).addEventListener('blur', self._updateText.bind(null, self));
 	},
 
 	_onCheckBoxChange: function (checkbox, self, event) {
