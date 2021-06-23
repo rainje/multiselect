@@ -1,6 +1,6 @@
 {
   "name": "multiselect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This project presents css + pure js implementation for multiselect html control.",
   "main": "scripts/multiselect.js",
   "scripts": {
