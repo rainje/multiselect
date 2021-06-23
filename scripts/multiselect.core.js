@@ -352,7 +352,8 @@ Multiselect.prototype = {
 		if (activeItems.length > 0) {
 			var val = '';
 			for (var i = 0; i < (activeItems.length < 5 ? activeItems.length : 5) ; i++) {
-				val += activeItems[i].innerText + ", ";
+                // The String is necessary because innerText could be undefined
+				val += String(activeItems[i].innerText).trim() + ", ";
 			}
 
 			val = val.substr(0, val.length - 2);
