@@ -1,4 +1,4 @@
-﻿function Multiselect(item, opts) {
+function Multiselect(item, opts) {
 	//if item is not a select - it is an error
 	if ((typeof($) != 'undefined' && !$(item).is('select')) ||
 		(typeof($) == 'undefined' && item.tagName != 'SELECT')) {
