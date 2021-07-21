@@ -1,4 +1,4 @@
-function Multiselect(item, opts) {
+﻿function Multiselect(item, opts) {
 	//if item is not a select - it is an error
 	if ((typeof($) != 'undefined' && !$(item).is('select')) ||
 		(typeof($) == 'undefined' && item.tagName != 'SELECT')) {
@@ -48,7 +48,7 @@ Multiselect.prototype = {
 	_createInputField: function () {
 		var input = m_helper.textField({
 			id : this._getInputFieldIdentifier(),
-			class : 'multiselect-input select is-arrowless is-fullwidth',
+			class : 'multiselect-input',
 			attributes : {
 				autocomplete: 'off'
 			}
@@ -61,7 +61,7 @@ Multiselect.prototype = {
 			}
 		}),
 		result = m_helper.div({
-			class : 'multiselect-input-div'
+			class : 'multiselect-input-div select is-arrowless is-fullwidth'
 		});
 
 		label.style.visibility = 'hidden';
