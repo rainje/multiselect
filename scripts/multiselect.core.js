@@ -39,7 +39,7 @@ Multiselect.prototype = {
 	//creates base wrapper for control
 	_createWrapper: function () {
 		var result = document.createElement('div');
-		result.className = 'multiselect-wrapper';
+		result.className = 'multiselect-wrapper control';
 		result.id = this._getIdentifier();
 		return result;
 	},
@@ -48,7 +48,7 @@ Multiselect.prototype = {
 	_createInputField: function () {
 		var input = m_helper.textField({
 			id : this._getInputFieldIdentifier(),
-			class : 'multiselect-input',
+			class : 'multiselect-input select is-arrowless is-fullwidth',
 			attributes : {
 				autocomplete: 'off'
 			}
@@ -56,12 +56,6 @@ Multiselect.prototype = {
 		label = m_helper.label({
 			id : this._getInputBadgeIdentifier(),
 			class : 'multiselect-count',
-			attributes : {
-				for : this._getInputFieldIdentifier()
-			}
-		}),
-		dropDownArrow = m_helper.label({
-			class : 'multiselect-dropdown-arrow',
 			attributes : {
 				for : this._getInputFieldIdentifier()
 			}
@@ -75,7 +69,6 @@ Multiselect.prototype = {
 
 		result.appendChild(input);
 		result.appendChild(label);
-		result.appendChild(dropDownArrow);
 
 		return result;
 	},
@@ -377,25 +370,7 @@ Multiselect.prototype = {
 		if (this._itemCounter != 0) {
 			badge.innerHTML = this._itemCounter;
 			badge.style.visibility = 'visible';
-
-			var ddArrow = badge.nextElementSibling;
-
-			if (this._itemCounter < 10) {
-				badge.style.left = '-45px';
-				ddArrow.style.marginLeft = '-42px';
-			}
-			else if (this._itemCounter < 100) {
-				badge.style.left = '-50px';
-				ddArrow.style.marginLeft = '-47px';
-			}
-			else if (this._itemCounter < 1000) {
-				badge.style.left = '-55px';
-				ddArrow.style.marginLeft = '-52px';
-			}
-			else if (this._itemCounter < 10000) {
-				badge.style.left = '-60px';
-				ddArrow.style.marginLeft = '-57px';
-			}
+			badge.style.left = '-45px';
 		}
 	},
 
